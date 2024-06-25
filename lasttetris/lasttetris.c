@@ -169,7 +169,8 @@ void drawScreen()
 	printf("score : ");
 	gotoXY(58,3);
 	printf("0");
-	
+	gotoXY(50,4);
+	printf("누르고 있는 키 : ");
 	gotoXY(50, 5); 
 	puts("좌우:이동, 위:회전, 아래:내림");
 	
@@ -236,6 +237,15 @@ bool processKey()
 			switch (ch) 
 			{
 					case LEFT: //←키 입력 : 왼쪽 이동
+					if(leftkey==0){
+						gotoXY(67,4);
+						printf("X");
+					}
+					else{
+						gotoXY(67,4);
+						printf("◀");
+					}
+					
 					if (re==0&&getAround(nx-1, ny, brick, rot) == EMPTY && (leftkey==1)|| re==1&&getAround(nx+1,ny,brick,rot)==EMPTY && (leftkey==1)) 
 					{
 						printBrick(false);
@@ -246,8 +256,15 @@ bool processKey()
 						printBrick(true);
 					}
 					break;
-
-				case RIGHT: //→키 입력 : 오른쪽 이동
+					case RIGHT:
+					if(righttkey==0){
+						gotoXY(67,4);
+						printf("X");
+					}
+					else{
+						gotoXY(67,4);
+						printf("▶");
+					}
 					if ( re==0&&getAround(nx+1, ny, brick, rot) == EMPTY && (righttkey=1)|| re==1&&getAround(nx-1, ny, brick, rot) == EMPTY && (righttkey=1))
 					{
 						printBrick(false);
@@ -258,8 +275,15 @@ bool processKey()
 						printBrick(true);
 					}
 					break;
-					
-				case UP: //↑키 입력 : 회전
+					case UP:
+					if(upkey==0){				
+						gotoXY(67,4);
+						printf("X");
+					}
+					else{
+						gotoXY(67,4);
+						printf("▲");
+					}		
 					trot = (rot==3 ? 0 : rot+1);
 						if ( getAround(nx, ny, brick, trot) == EMPTY && (upkey==1)){
 						printBrick(false);
@@ -268,6 +292,8 @@ bool processKey()
 						}
 					break;
 				case DOWN: //↓키 입력 : 아래로 내림
+					gotoXY(67,4);
+					printf("▼");
 					if ( moveDown() ) 
 					{
 						return true;
@@ -421,10 +447,10 @@ void Event(int Eventnum){
 			revers(); //방향키 좌우 반전
 			break;
 		case 2:
-			doublepoint();
+			doublepoint(); 
 			break;
 		case 3:
-			mipoint();
+			mipoint(); 
 			break;
 		case 4:
 			speed(); //속도 변경

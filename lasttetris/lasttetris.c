@@ -408,7 +408,7 @@ void turn(){
 }
 int Eventnum = 0;
 int checknum = 100;
-int eventon[9]={0};
+
 void Event(int a){
 	if(a==1){
 			switch (checknum)
@@ -430,12 +430,11 @@ void Event(int a){
 
 	if(a == 2){
 		
-		eventon[checknum]=0;
 		srand(time(NULL));
 		int randnum=rand()% 6;
 		Eventnum -= 2;
 		checknum = randnum;
-		eventon[randnum]=1;
+		
 		switch(randnum){
 		case 0:
 			turnNumber =1; //계속 회전 할것인지

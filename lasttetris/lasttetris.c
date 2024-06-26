@@ -408,7 +408,7 @@ void turn(){
 }
 int Eventnum = 0;
 int checknum = 100;
-
+int eventon[9]={0};
 void Event(int a){
 	if(a==1){
 			switch (checknum)

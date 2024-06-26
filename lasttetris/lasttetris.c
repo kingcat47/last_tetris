@@ -170,12 +170,8 @@ void drawScreen()
 	gotoXY(58,3);
 	printf("0");
 	gotoXY(50,4);
-	printf("누르고 있는 키 : ");
-	gotoXY(50, 5); 
-	puts("좌우:이동, 위:회전, 아래:내림");
-	
-	gotoXY(50, 6); 
-	puts("공백:전부 내림");
+	printf("your choice : ");
+
 
 }
 
@@ -412,7 +408,7 @@ void turn(){
 }
 int Eventnum = 0;
 int checknum = 100;
-int eventon[9]={0};
+
 void Event(int a){
 	if(a==1){
 			switch (checknum)

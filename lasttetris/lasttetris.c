@@ -421,7 +421,7 @@ void Event(int a){
 				break;
 			case 3: gop=1;
 				break;
-			case 4: sp+=80;
+			case 4: sp=80;
 				break;
 			case 5: Nbong();
 				break;

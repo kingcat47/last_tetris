@@ -413,10 +413,8 @@ void turn(){
 int Eventnum = 0;
 int checknum = 100;
 int eventon[9]={0};
-void Event(int Eventnum){
-	
-	if(Eventnum == 2){
-		if(checknum != 100){
+void Event(int a){
+	if(a==1){
 			switch (checknum)
 			{
 			case 0: turnNumber = 0;
@@ -433,6 +431,9 @@ void Event(int Eventnum){
 				break;
 			}
 		}
+
+	if(a == 2){
+		
 		eventon[checknum]=0;
 		srand(time(NULL));
 		int randnum=rand()% 6;
